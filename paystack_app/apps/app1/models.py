@@ -6,3 +6,8 @@ from django.db import models
 
 
 
+
+
+class PayableBills(models.Model):
+    bill_name = models.CharField(max_length=100)
+    bill_description = models.CharField(max_length=200)

@@ -1,3 +1,4 @@
+from django.http.response import HttpResponseRedirect
 from django.shortcuts import render
 from forms import  *
 # Create your views here.
@@ -30,11 +31,10 @@ def checkout_payment(request):
         if checkout_form.is_valid:
             print("print the form is valud")
 
-            data = checkout_form.clean
+            amount = checkout_form.clean('amount')
+            print ("data of %s" % amount )
 
-            print ("data of %s" % data['amount'] )
-
-
+            return  HttpResponseRedirect(redirect_to='successfull')
 
 
     return render(request, template_name='app1/_payment_bill.html', context={'payment_form': checkout_form})

@@ -29,7 +29,8 @@ def test_paystack():
 class PayPalApi:
     def __init__(self):
         # run the get access toeke
-        self.test_paypal_api_access_token()
+        # self.test_paypal_api_access_token()
+        pass
 
     def test_paypal_api_access_token(self):
         url = "https://api.sandbox.paypal.com/v1/oauth2/token"
@@ -52,8 +53,10 @@ class PayPalApi:
         # get the access_token url
         self.access_token = paypal_response.json()['access_token']
         print "Access token is %s" % self.access_token
+        return  self.access_token
 
     def test_paypal_payment(self):
+        self.test_paypal_api_access_token()
         url = "https://api.sandbox.paypal.com/v1/payments/payment"
         http_header = {
             'Content-Type': 'application/json',
