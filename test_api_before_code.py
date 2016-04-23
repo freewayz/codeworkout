@@ -2,6 +2,7 @@
 
 import os
 import requests
+import json
 from requests.auth import HTTPBasicAuth
 
 
@@ -77,8 +78,9 @@ class PayPalApi:
             ]
         }
 
+        print "Payload data is " , json.dumps(payload)
         print "getting payment response ..... "
-        paypal_payment_response = requests.post(url, data=payload, headers=http_header)
+        paypal_payment_response = requests.post(url, data=json.dumps(payload), headers=http_header)
         print paypal_payment_response.json()
 
 
