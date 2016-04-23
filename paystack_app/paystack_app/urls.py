@@ -5,7 +5,7 @@ from  django.conf import settings
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', include('apps.app1.urls'))
+    url(r'^billa/', include('apps.app1.urls'))
 ]
 
 if settings.DEBUG :

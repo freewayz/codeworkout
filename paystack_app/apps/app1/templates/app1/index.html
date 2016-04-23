@@ -1,0 +1,14 @@
+{% block content %}
+
+
+    <div>
+        <p>Pay any Nigerian Bill here</p>
+    </div>
+ <div class="row">
+        <ul class="">
+            {% for bill in bills %}
+                <li><a href="/payment/{{ bill }}">{{ bill }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

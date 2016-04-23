@@ -8,5 +8,6 @@ from views import *
 
 urlpatterns = patterns(
     '',
-     url(r'^$', view=index_page, name="index")
+     url(r'^$', view=index_page, name="index"),
+    url(r'^payment/$', view=checkout_payment, name="payment")
 )

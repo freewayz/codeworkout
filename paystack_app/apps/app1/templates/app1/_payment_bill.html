@@ -1,0 +1,28 @@
+{% include 'app1/_base.html' %}
+
+
+
+
+{% block content %}
+    <form action="{% url 'payment' %}" method="post">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col"> {{ payment_form.first_name.label }}</div>
+            <div class="col"> {{ payment_form.first_name }}</div>
+        </div>
+
+        <div class="row">
+            <div class="col"> {{ payment_form.last_name.label }}</div>
+            <div class="col"> {{ payment_form.last_name }}</div>
+        </div>
+
+        <div class="row">
+            <div class="col"> {{ payment_form.amount.label }}</div>
+            <div class="col"> {{ payment_form.amount }}</div>
+        </div>
+
+        <div class="row">
+            <button class="button" type="submit">Make Payment</button>
+        </div>
+    </form>
+{% endblock %}
